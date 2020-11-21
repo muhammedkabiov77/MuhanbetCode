@@ -1,0 +1,47 @@
+$BgColor: black;
+$WidthBlock: 70%;
+$Border: 4px solid red;
+$color: #663399;
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+@mixin font ($color, $fontW) {
+   font-size: 1.1em;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif;
+   color: $color;
+}
+
+.block:not(.first) {
+   background: $BgColor;
+   border: $Border;
+   height: 200px;
+   width: $WidthBlock;
+   margin-bottom: 20px;
+}
+
+#central_block {
+   padding: 30px;
+   color: #ffffff;
+   ul {
+      list-style: none;
+      display: inline-block;
+      @include font(blue, bold);
+      li {
+         float: left;
+         margin-right: 10px;
+         @include font($color, light);
+      }
+   }
+   
+}
+
+.first {
+   background: $BgColor;
+   border: $Border;
+   height: 100px;
+   margin-bottom: 20px;
+}
